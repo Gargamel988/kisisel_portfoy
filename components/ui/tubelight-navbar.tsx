@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -15,7 +14,6 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[]
   className?: string
-  
 }
 interface NavigationProps {
   scrollToSection: (sectionId: string) => void;
@@ -43,7 +41,8 @@ export function NavBar({ items, className, scrollToSection }: NavBarProps & Navi
             <Link
               key={item.name}
               href={item.url}
-              onClick={() => {
+              onClick={e => {
+                e.preventDefault();
                 setActiveTab(item.name)
                 scrollToSection(sectionId)
               }}

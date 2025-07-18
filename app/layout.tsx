@@ -1,19 +1,17 @@
-"use client"
 import "./globals.css";
+import MainNavbar from "../components/layout";
 
-import NavBarDemo from "../components/layout";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
-    <html lang="en">
+    <html lang="tr" className="dark">
       <body>
-      <NavBarDemo/>
+        <MainNavbar />
         {children}
-      
       </body>
     </html>
   );
