@@ -1,6 +1,6 @@
 import AboutSectionClient from "./client/about-section-client";
 import { FaReact } from "react-icons/fa";
-import { SiTypescript, SiCss3, SiJavascript } from "react-icons/si";
+import { SiTypescript, SiCss3, SiJavascript, SiVercel } from "react-icons/si";
 import {
   RiNextjsFill,
   RiTailwindCssFill,
@@ -16,25 +16,68 @@ export interface Interest {
 
 const interests: Interest[] = [
   { id: 1, icon: <SiCss3 size={32} />, name: "CSS", color: "blue" },
-  { id: 2, icon: <SiJavascript size={32} />, name: "JavaScript", color: "yellow" },
+  {
+    id: 6,
+    icon: <RiTailwindCssFill size={32} />,
+    name: "Tailwind CSS",
+    color: "cyan",
+
+
+  },
+  {
+    id: 2,
+    icon: <SiJavascript size={32} />,
+    name: "JavaScript",
+    color: "yellow",
+  },
   { id: 3, icon: <FaReact size={32} />, name: "React", color: "cyan" },
-  { id: 4, icon: <RiNextjsFill size={32} />, name: "Next.js", color: "white" },
-  { id: 5, icon: <RiTailwindCssFill size={32} />, name: "Tailwind", color: "cyan" },
-  { id: 6, icon: <SiTypescript size={32} />, name: "TypeScript", color: "blue" },
-  { id: 7, icon: <RiSupabaseFill size={32} />, name: "Supabase", color: "green" },
+  { id: 5, icon: <RiNextjsFill size={32} />, name: "Next.js", color: "white" },
+  { id: 4, icon: <FaReact size={32} />, name: "React Native", color: "cyan" },
+  {
+    id: 7,
+    icon: <SiTypescript size={32} />,
+    name: "TypeScript",
+    color: "blue",
+  },
+  {
+    id: 8,
+    icon: <RiSupabaseFill size={32} />,
+    name: "Supabase",
+    color: "green",
+  },
+  { id: 9, icon: <SiVercel size={32} />, name: "Vercel", color: "black" },
+  {
+    id: 10,
+    icon: <SiVercel size={32} />,
+    name: "Vercel AI SDK",
+    color: "black",
+  },
 ];
 
 const colorClassMap: { [key: string]: string } = {
-  blue: "text-blue-400 group-hover:text-blue-300",
-  yellow: "text-yellow-300 group-hover:text-yellow-200",
-  cyan: "text-cyan-400 group-hover:text-cyan-300",
-  white: "text-gray-200 group-hover:text-gray-300",
-  green: "text-green-400 group-hover:text-green-300",
+  blue: "text-sky-400 group-hover:text-sky-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]",
+  yellow: "text-amber-300 group-hover:text-amber-200 drop-shadow-[0_0_8px_rgba(252,211,77,0.5)]",
+  cyan: "text-teal-400 group-hover:text-teal-300 drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]",
+  white: "text-gray-100 group-hover:text-gray-200 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]",
+  green: "text-emerald-400 group-hover:text-emerald-300 drop-shadow-[0_0_8px_rgba(52,211,153,0.5)]",
+  black: "text-slate-300 group-hover:text-gray-100 drop-shadow-[0_0_8px_rgba(0,0,0,0.4)]",
 };
 
-const aboutText = `Selamlar! Ben Ömer Aydın, frontend ve fullstack web projeleri geliştiren bir yazılımcıyım. 2023-2025 arasında Hatay Mustafa Kemal Üniversitesi'nden mezun oldum. Problem çözme, planlı çalışma ve disiplinli olmamla projelerimi başarıyla tamamlıyorum. "TodoPro" adlı web sitem üzerinde deneyim kazandım. Mobil programlama alanında da kendimi geliştirmeyi hedefliyorum.`;
+
+const aboutText = `
+1 yıldır web ve mobil geliştirme alanında çalışıyorum. 
+React, Next.js ve React Native ile modern, hızlı ve kullanıcı odaklı arayüzler tasarlıyor; 
+Tailwind CSS, Shadcn UI ve Framer Motion ile hızlı ve dinamik deneyimler oluşturuyorum. 
+Supabase ve Vercel AI SDK ile backend ve yapay zekâ entegrasyonları geliştirerek, 
+tam uçtan uca çözümler üretmeye odaklanıyorum.
+`
 
 export default function AboutSection() {
-  return   <AboutSectionClient interests={interests} colorClassMap={colorClassMap} aboutText={aboutText} />
-  
+  return (
+    <AboutSectionClient
+      interests={interests}
+      colorClassMap={colorClassMap}
+      aboutText={aboutText}
+    />
+  );
 }

@@ -1,10 +1,9 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Instagram, Linkedin, Github } from "lucide-react";
 import Image from "next/image";
-import profile from "@/public/profile.jpeg";
-
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 interface SocialMedia {
   name: string;
   icon: React.ElementType;
@@ -18,26 +17,33 @@ const HeroSectionClient: React.FC = () => {
   const socialMedia: SocialMedia[] = [
     {
       name: "Instagram",
-      icon: Instagram,
-      href: "https://www.instagram.com/omeraydin_/",
+      icon: FaInstagram,
+      href: "https://www.instagram.com/omeraydin9826/",
     },
     {
       name: "LinkedIn",
-      icon: Linkedin,
-      href: "https://www.linkedin.com/in/omeraydin/",
+      icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/ömer-aydın-3bb453366",
     },
     {
       name: "GitHub",
-      icon: Github,
-      href: "https://github.com/omeraydin",
+      icon: FaGithub,
+      href: "https://github.com/Gargamel988",
+    },
+    {
+      name: "X",
+      icon: FaXTwitter,
+      href: "https://x.com/omerAIdev",
     },
   ];
 
   return (
-    <section id="home-section"
-      className="min-h-screen bg-gradient-to-b from-green-500 to-black p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12 4xl:p-16 overflow-hidden">
+    <section
+      id="home-section"
+      className="min-h-screen bg-gradient-to-b from-green-500 to-black p-3 sm:p-4 md:p-0 lg:p-8 xl:p-0 2xl:p-12 4xl:p-16 overflow-hidden"
+    >
       <div
-        className="grid grid-cols-1 lg:grid-cols-2 lg:gap-0 pt-8 sm:pt-10 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28 4xl:pt-32 w-full min-h-screen max-w-screen-4xl mx-auto"
+        className="grid grid-cols-1 lg:grid-cols-2 lg:gap-0 pt-8 sm:pt-10 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-28 4xl:pt-32 w-full min-h-screen max-w-7xl mx-auto "
         ref={heroSectionRef}
       >
         <motion.div
@@ -50,15 +56,18 @@ const HeroSectionClient: React.FC = () => {
           transition={{ duration: 1.2, delay: 0, ease: "easeInOut" }}
           className="flex flex-col items-center lg:items-start justify-center p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12 4xl:p-16 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10 4xl:gap-12 w-full h-full text-center lg:text-left order-2 lg:order-1"
         >
-          <h1 id="hero-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 4xl:text-8xl font-bold mb-2 sm:mb-3 md:mb-2 lg:mb-5 xl:mb-6 2xl:mb-8 4xl:mb-10 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 4xl:text-8xl font-bold mb-2 sm:mb-3 md:mb-2 lg:mb-5 xl:mb-6 2xl:mb-8 4xl:mb-10 leading-tight">
             Merhaba <br />
             <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 4xl:text-9xl mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-8 4xl:mb-10 text-green-500 font-sans">
               Ben Ömer Aydın
             </span>
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 4xl:text-3xl max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl 4xl:max-w-4xl mb-4 sm:mb-5 md:mb-0 lg:mb-7 xl:mb-8 2xl:mb-10 4xl:mb-12 px-3 sm:px-4 lg:px-0 leading-relaxed">
-            Modern web teknolojileriyle kullanıcı odaklı arayüzler geliştiriyorum.
+          <p className="text-base sm:text-lg md:text-xl max-w-xl text-gray-200 leading-relaxed mb-8">
+            1 yıldır modern web ve mobil uygulamalar geliştiriyorum. React,
+            Next.js, ve React Native ile kullanıcı dostu arayüzler inşa ederken;
+            Supabase ve Vercel AI SDK ile yapay zekâ destekli deneyimler
+            oluşturuyorum.
           </p>
 
           <motion.div
@@ -82,7 +91,7 @@ const HeroSectionClient: React.FC = () => {
                   whileHover={{
                     scale: 1.2,
                     rotate: 10,
-                    boxShadow: "0px 4px 20px rgba(34,197,94,0.3)",
+                    boxShadow: "0px 0px 25px rgba(34,197,94,0.6)",
                     backgroundColor: "#22c55e",
                   }}
                   whileTap={{ scale: 0.95, rotate: -10 }}
@@ -138,7 +147,7 @@ const HeroSectionClient: React.FC = () => {
               transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
             >
               <Image
-                src={profile}
+                src="/profil.jpg"
                 alt="Ömer Aydın"
                 width={384}
                 height={384}

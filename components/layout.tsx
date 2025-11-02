@@ -41,5 +41,5 @@ const MainNavbar = () => {
   };
 
   return <NavBar items={navItems} scrollToSection={scrollToSection} /> 
-}
+};
 export default MainNavbar;
