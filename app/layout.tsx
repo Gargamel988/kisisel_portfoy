@@ -29,7 +29,14 @@ export const metadata: Metadata = {
     "HTML",
     "CSS",
   ],
-  authors: [{ name: "Ömer Aydın", url: "https://www.omeraydin.com" }],
+  verification:{
+    google: "ZthQntL_bdSYhNe74uXr_tQKIEr4K-gQwem01txYEPs",
+  },
+  alternates: {
+    canonical: "https://kisisel-portfoy.vercel.app/",
+  },
+  metadataBase: new URL("https://kisisel-portfoy.vercel.app/"),
+  authors: [{ name: "Ömer Aydın", url: "https://kisisel-portfoy.vercel.app/" }],
   creator: "Ömer Aydın",
   publisher: "Ömer Aydın",
   openGraph: {
@@ -81,7 +88,7 @@ export default function RootLayout({
     name: "Ömer Aydın",
     description:
       "Ömer Aydın'ın portfolio sitesi. Full Stack Developer, Mobile Developer, Web Developer.",
-    url: "https://www.omeraydin.com",
+    url: "https://kisisel-portfoy.vercel.app/",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "Web",
     offers: {
@@ -100,8 +107,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Ömer Aydın",
-    url: "https://www.omeraydin.com",
-    logo: "https://www.omeraydin.com/profil.png",
+    url: "https://kisisel-portfoy.vercel.app/",
+    logo: "https://kisisel-portfoy.vercel.app/profil.png",
     sameAs: ["https://x.com/omerAIdev"],
   };
   return (
