@@ -17,13 +17,8 @@ export default function ModalContent({ open, onOpenChange, item }: ModalContentP
   return (
     <Dialog open={open} onOpenChange={onOpenChange} >
       <DialogContent 
-        className="w-full max-w-8xl max-h-[90vh] overflow-y-auto z-[100] scrollbar-hide" 
-        style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        }}
-        showCloseButton={false}
-      >
+        className=" max-h-[90vh] overflow-y-auto scrollbar-hide" 
+>
         {modalItem ? (
           <>
             <DialogHeader>
