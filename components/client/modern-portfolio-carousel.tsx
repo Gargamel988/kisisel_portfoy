@@ -45,6 +45,11 @@ export default function ModernPortfolioCarousel({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const portfolioRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(portfolioRef);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!autoPlay || isHovered || isModalOpen) return;
@@ -73,7 +78,7 @@ export default function ModernPortfolioCarousel({
   return (
       <section
         id="projects-section"
-        className=" flex justify-center items-center min-h-screen bg-gradient-to-b from-green-500 to-black overflow-hidden "
+        className="flex justify-center items-center min-h-screen bg-gradient-to-b from-green-500 to-black w-full"
       >
       <div className="z-10 container px-4 md:px-6 lg:px-8 xl:px-10 max-w-7xl mx-auto">
         {/* Carousel Container */}
@@ -87,11 +92,11 @@ export default function ModernPortfolioCarousel({
             ref={portfolioRef}
             className="relative h-[60vh]  md:h-[calc(100vh-120px)] lg:h-[calc(100vh-140px)] xl:h-[calc(100vh-160px)]  rounded-xl  md:rounded-3xl overflow-hidden flex  "
           >
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 20 }}
+                initial={false}
+                animate={isMounted && isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 20 }}
                 transition={{
                   duration: 0.6,
                   ease: [0.25, 0.1, 0.25, 1],
@@ -119,10 +124,8 @@ export default function ModernPortfolioCarousel({
                 {/* Content */}
                 <div className="relative h-full flex items-end p-3 md:p-6 lg:p-8 xl:p-10 ">
                   <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={
-                      isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                    }
+                    initial={false}
+                    animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                     transition={{
                       duration: 0.6,
                       ease: [0.25, 0.1, 0.25, 1],
@@ -136,10 +139,8 @@ export default function ModernPortfolioCarousel({
                   </motion.div>
                   <div className="w-full">
                     <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={
-                        isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                      }
+                      initial={false}
+                      animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                       transition={{
                         duration: 0.6,
                         ease: [0.25, 0.1, 0.25, 1],
@@ -153,10 +154,8 @@ export default function ModernPortfolioCarousel({
                     </motion.div>
 
                     <motion.h2
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={
-                        isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                      }
+                      initial={false}
+                      animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                       transition={{
                         duration: 0.6,
                         delay: 0.3,
@@ -169,10 +168,8 @@ export default function ModernPortfolioCarousel({
                     </motion.h2>
 
                     <motion.p
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={
-                        isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                      }
+                      initial={false}
+                      animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                       transition={{
                         duration: 0.6,
                         delay: 0.4,
@@ -185,10 +182,8 @@ export default function ModernPortfolioCarousel({
                     </motion.p>
 
                     <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={
-                        isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                      }
+                      initial={false}
+                      animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                       transition={{
                         duration: 0.6,
                         delay: 0.5,
@@ -210,12 +205,8 @@ export default function ModernPortfolioCarousel({
                     {items[currentIndex].modalItems.length > 0 && (
                     
                         <motion.div
-                          initial={{ opacity: 0, x: -50 }}
-                          animate={
-                            isInView
-                              ? { opacity: 1, x: 0 }
-                              : { opacity: 0, x: -50 }
-                          }
+                          initial={false}
+                          animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                           transition={{
                             duration: 0.6,
                             delay: 0.6,
@@ -241,7 +232,7 @@ export default function ModernPortfolioCarousel({
           {/* Navigation Buttons */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], type: "tween" }}
             className="absolute top-1/2 -translate-y-1/2 left-1 md:left-4 z-20"
           >
@@ -257,7 +248,7 @@ export default function ModernPortfolioCarousel({
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], type: "tween" }}
             className="absolute top-1/2 -translate-y-1/2 right-1 sm:right-2 md:right-4 z-20"
           >
@@ -274,7 +265,7 @@ export default function ModernPortfolioCarousel({
           {/* Dots Indicator */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            animate={isMounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], type: "tween" }}
             className="flex justify-center items-center mt-4 md:mt-8 gap-2 md:gap-3"
           >

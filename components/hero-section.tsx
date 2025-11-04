@@ -1,7 +1,5 @@
-import HeroSectionClient from "./client/hero-section-client"; 
+import HeroSectionClient from "@/components/client/hero-section-client";
 
-const HeroSection = () => {
+export default function HeroSection() {
   return <HeroSectionClient />;
-};
-
-export default HeroSection;
+}

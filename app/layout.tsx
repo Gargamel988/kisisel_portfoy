@@ -8,7 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const interFont = Inter({
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -112,7 +112,7 @@ export default function RootLayout({
     sameAs: ["https://x.com/omerAIdev"],
   };
   return (
-    <html lang="tr" className="dark">
+    <html lang="tr" className="dark" >
       <head>
         <script
           type="application/ld+json"

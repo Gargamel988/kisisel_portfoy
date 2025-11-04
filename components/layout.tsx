@@ -2,7 +2,7 @@
 import { Home, User, Briefcase, Info } from 'lucide-react'
 import { NavBar } from "@/components/ui/tubelight-navbar"
 
-const MainNavbar = () => {
+export default function MainNavbar() {
   const navItems = [
     { name: 'anasayfa', url: "#home-section", icon: Home }, 
     { name: 'hakkımda', url: "#about-section", icon: User },
@@ -41,5 +41,4 @@ const MainNavbar = () => {
   };
 
   return <NavBar items={navItems} scrollToSection={scrollToSection} /> 
-};
-export default MainNavbar;
+}
