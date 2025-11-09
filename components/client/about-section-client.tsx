@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useMemo } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
+import { Card } from "../ui/card";
 
 // Types
 interface Interest {
@@ -36,18 +37,18 @@ const InterestCard: React.FC<{
   colorClass: string;
   className?: string;
 }> = ({ interest, colorClass, className = "" }) => (
-  <div
+  <Card
     className={`flex flex-col items-center justify-center bg-slate-700/30 rounded-xl border border-slate-600/30 ${className}`}
     role="article"
     aria-label={`Teknoloji: ${interest.name}`}
   >
-    <div className={`mb-2 lg:mb-3 ${colorClass}`} aria-hidden="true">
+    <div className={` ${colorClass}`} aria-hidden="true">
       {interest.icon}
     </div>
-    <span className="text-slate-300 text-sm font-medium tracking-wider text-center">
+    <span className="text-slate-300 text-sm font-medium tracking-wider text-center mb-2">
       {interest.name}
     </span>
-  </div>
+  </Card>
 );
 
 const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
@@ -78,6 +79,7 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
       transition: {
         duration: ANIMATION_CONFIG.FADE_DURATION,
         ease: EASING.SMOOTH,
+        delay: 0.75,
       },
     },
   };
@@ -89,7 +91,7 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
       transition: {
         duration: ANIMATION_CONFIG.FADE_DURATION,
         ease: EASING.SMOOTH,
-        delay: 0.5,
+        delay: 0.75,
       },
     },
   };
@@ -97,7 +99,7 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
   return (
     <section
       id="about-section"
-      className="min-h-screen bg-gradient-to-b from-black to-green-500 flex justify-center w-full"
+      className="min-h-screen  bg-gradient-to-b from-black to-green-500 flex justify-center w-full"
       aria-labelledby="about-heading"
     >
       <div className="flex flex-col items-center justify-center w-full max-w-7xl px-4">
@@ -131,7 +133,7 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
           <motion.h2
             className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-wide mb-8 text-center text-green-400"
             initial={false}
-            animate={shouldAnimate ? "visible" : "hidden"}
+            animate= {"visible"}
             variants={titleVariants}
           >
             Bildiğim Teknolojiler
@@ -143,15 +145,12 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
               {interests.map((interest, index) => (
                 <motion.div
                   key={`interest-mobile-${interest.name}-${index}`}
-                  initial={false}
-                  animate={
-                    shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }
-                  }
+                  animate={ { opacity: 1, y: 0 } }
                   transition={{
                     duration: prefersReducedMotion ? 0 : 1,
                     delay: prefersReducedMotion
                       ? 0
-                      : ANIMATION_CONFIG.BASE_DELAY +
+                      : 0.5 +
                         index * ANIMATION_CONFIG.ITEM_DELAY_INCREMENT,
                     ease: EASING.SMOOTH,
                   }}
@@ -167,8 +166,7 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
           </div>
 
           {/* Tablet: Scrolling layout */}
-          <div className="hidden sm:block lg:hidden w-full">
-            <div className="overflow-hidden">
+          <div className="hidden sm:block lg:hidden w-full overflow-hidden">
               <motion.div
                 animate={
                   shouldAnimate && !prefersReducedMotion
@@ -181,7 +179,7 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
                 transition={{
                   duration: ANIMATION_CONFIG.SCROLL_DURATION,
                   ease: EASING.LINEAR,
-                  delay: 0.5,
+                  delay: 0.3,
                   repeat: Infinity,
                   repeatType: "loop",
                 }}
@@ -197,22 +195,21 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
                         ? 0
                         : ANIMATION_CONFIG.FADE_DURATION,
                       ease: EASING.SMOOTH,
+                      delay: 0.75,
                     }}
                   >
                     <InterestCard
                       interest={interest}
                       colorClass={colorClassMap[interest.color]}
-                      className="h-28 w-32 p-4 flex-shrink-0"
+                      className="h-28 w-32 "
                     />
                   </motion.div>
                 ))}
               </motion.div>
-            </div>
           </div>
 
           {/* Desktop: Scrolling layout */}
-          <div className="hidden lg:block w-full">
-            <div className="overflow-hidden">
+          <div className="hidden lg:block w-full overflow-hidden">
               <motion.div
                 animate={
                   shouldAnimate && !prefersReducedMotion
@@ -239,7 +236,7 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
                         ? 0
                         : ANIMATION_CONFIG.FADE_DURATION,
                       ease: EASING.SMOOTH,
-                      delay: 0.5,
+                      delay: 0.75,
                     }}
                   >
                     <InterestCard
@@ -250,7 +247,6 @@ const AboutSectionClient: React.FC<AboutSectionClientProps> = ({
                   </motion.div>
                 ))}
               </motion.div>
-            </div>
           </div>
         </div>
       </div>

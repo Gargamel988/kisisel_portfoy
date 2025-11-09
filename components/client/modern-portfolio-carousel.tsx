@@ -39,6 +39,7 @@ export default function ModernPortfolioCarousel({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  
   const autoPlay = true;
   const interval = 5000;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,6 +60,7 @@ export default function ModernPortfolioCarousel({
   };
 
   const goToNext = () => {
+    
     setCurrentIndex((prev) => (prev + 1) % items.length);
   };
 
@@ -94,16 +96,13 @@ export default function ModernPortfolioCarousel({
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={currentIndex}
-                  initial={false}
-                  animate={
-                     isInView
-                      ? { opacity: 1, scale: 1, y: 0 }
-                      : { opacity: 0, scale: 0.8, y: 20 }
-                  }
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  animate={ isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 20 }}
+                  exit={{ opacity: 0, scale: 0.8, y: -20 }}
                   transition={{
                     duration: 0.6,
                     ease: [0.25, 0.1, 0.25, 1],
-                    type: "tween",
+                    delay: 0.1,
                   }}
                   className="absolute inset-0"
                 >
@@ -114,7 +113,7 @@ export default function ModernPortfolioCarousel({
                       <Image
                         src={items[currentIndex].image}
                         alt={items[currentIndex].title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover brightness-40"
                         priority
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1536px) 80vw, 70vw"
                       />
@@ -126,16 +125,13 @@ export default function ModernPortfolioCarousel({
                   {/* Content */}
                   <div className="relative h-full flex items-end p-3 md:p-6 lg:p-8 xl:p-10 ">
                     <motion.div
-                      initial={false}
-                      animate={
-                         isInView
-                          ? { opacity: 1, x: 0 }
-                          : { opacity: 0, x: -50 }
-                      }
+                      key={`status-${currentIndex}`}
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={ isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                       transition={{
                         duration: 0.6,
                         ease: [0.25, 0.1, 0.25, 1],
-                        type: "tween",
+                        delay: 0.2,
                       }}
                       className="absolute top-0 left-0 px-3 md:px-6 lg:px-8 xl:px-10  py-2 text-white text-xs sm:text-sm md:text-base font-medium"
                     >
@@ -145,16 +141,13 @@ export default function ModernPortfolioCarousel({
                     </motion.div>
                     <div className="w-full">
                       <motion.div
-                        initial={false}
-                        animate={
-                           isInView
-                            ? { opacity: 1, x: 0 }
-                            : { opacity: 0, x: -50 }
-                        }
+                        key={`category-${currentIndex}`}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={ isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                         transition={{
                           duration: 0.6,
                           ease: [0.25, 0.1, 0.25, 1],
-                          type: "tween",
+                          delay: 0.3,
                         }}
                         className="mb-2  md:mb-4"
                       >
@@ -164,17 +157,13 @@ export default function ModernPortfolioCarousel({
                       </motion.div>
 
                       <motion.h2
-                        initial={false}
-                        animate={
-                           isInView
-                            ? { opacity: 1, x: 0 }
-                            : { opacity: 0, x: -50 }
-                        }
+                        key={`title-${currentIndex}`}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={ isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                         transition={{
                           duration: 0.6,
-                          delay: 0.3,
+                          delay: 0.4,
                           ease: [0.25, 0.1, 0.25, 1],
-                          type: "tween",
                         }}
                         className="text-xl md:text-3xl lg:text-4xl xl:text-5xl  font-bold text-white mb-2 md:mb-4 leading-tight"
                       >
@@ -182,17 +171,13 @@ export default function ModernPortfolioCarousel({
                       </motion.h2>
 
                       <motion.p
-                        initial={false}
-                        animate={
-                           isInView
-                            ? { opacity: 1, x: 0 }
-                            : { opacity: 0, x: -50 }
-                        }
+                        key={`description-${currentIndex}`}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={ isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                         transition={{
                           duration: 0.6,
-                          delay: 0.4,
+                          delay: 0.5,
                           ease: [0.25, 0.1, 0.25, 1],
-                          type: "tween",
                         }}
                         className="text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-3 md:mb-6 leading-relaxed"
                       >
@@ -200,17 +185,13 @@ export default function ModernPortfolioCarousel({
                       </motion.p>
 
                       <motion.div
-                        initial={false}
-                        animate={
-                           isInView
-                            ? { opacity: 1, x: 0 }
-                            : { opacity: 0, x: -50 }
-                        }
+                        key={`technologies-${currentIndex}`}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={ isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                         transition={{
                           duration: 0.6,
-                          delay: 0.5,
+                          delay: 0.6,
                           ease: [0.25, 0.1, 0.25, 1],
-                          type: "tween",
                         }}
                         className="flex flex-wrap gap-1 md:gap-2 mb-4 md:mb-6 lg:mb-8"
                       >
@@ -226,17 +207,13 @@ export default function ModernPortfolioCarousel({
 
                       {items[currentIndex].modalItems.length > 0 && (
                         <motion.div
-                          initial={false}
-                          animate={
-                             isInView
-                              ? { opacity: 1, x: 0 }
-                              : { opacity: 0, x: -50 }
-                          }
+                          key={`button-${currentIndex}`}
+                          initial={{ opacity: 0, x: -50 }}
+                          animate={ isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                           transition={{
                             duration: 0.6,
-                            delay: 0.6,
+                            delay: 0.7,
                             ease: [0.25, 0.1, 0.25, 1],
-                            type: "tween",
                           }}
                           className="flex-1 md:flex-none"
                         >
@@ -256,23 +233,24 @@ export default function ModernPortfolioCarousel({
 
             {/* Navigation Buttons */}
             <motion.div
+            key={`previous-${currentIndex}`}
               initial={{ opacity: 0, x: -50 }}
               animate={
-                 isInView
+                 isInView 
                   ? { opacity: 1, x: 0 }
                   : { opacity: 0, x: -50 }
               }
               transition={{
                 duration: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
-                type: "tween",
+                delay: 0.5,
               }}
               className="absolute top-1/2 -translate-y-1/2 left-1 md:left-4 z-20"
             >
               <Button
                 variant="outline"
                 size="icon"
-                onClick={goToPrevious}
+                onClick={goToPrevious }
                 className="w-8 h-8 cursor-pointer md:w-12 md:h-12 bg-black/20 backdrop-blur-sm border-white/20 text-white hover:bg-black/40 hover:border-white/40 transition-all duration-300"
               >
                 <ArrowLeft className="h-3 w-3 md:h-5 md:w-5" />
@@ -280,6 +258,7 @@ export default function ModernPortfolioCarousel({
             </motion.div>
 
             <motion.div
+              key={`next-${currentIndex}`}
               initial={{ opacity: 0, x: 50 }}
               animate={
                  isInView
@@ -289,7 +268,7 @@ export default function ModernPortfolioCarousel({
               transition={{
                 duration: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
-                type: "tween",
+                delay: 0.5,
               }}
               className="absolute top-1/2 -translate-y-1/2 right-1 sm:right-2 md:right-4 z-20"
             >
@@ -305,6 +284,7 @@ export default function ModernPortfolioCarousel({
 
             {/* Dots Indicator */}
             <motion.div
+              key={`dots-${currentIndex}`}
               initial={{ opacity: 0, x: -50 }}
               animate={
                  isInView
@@ -314,7 +294,7 @@ export default function ModernPortfolioCarousel({
               transition={{
                 duration: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
-                type: "tween",
+                delay: 0.5,
               }}
               className="flex justify-center items-center mt-4 md:mt-8 gap-2 md:gap-3"
             >

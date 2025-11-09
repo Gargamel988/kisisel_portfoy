@@ -39,9 +39,8 @@ export function NavBar({
         const element = document.getElementById(sectionId);
 
         if (element) {
-          const sectionTop = element.offsetTop;
+          const sectionTop = element.offsetTop ;
           const sectionBottom = sectionTop + element.offsetHeight;
-
           // Eğer scroll pozisyonu bu section içindeyse
           if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
             setActiveSection(item.name);

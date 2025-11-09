@@ -4,10 +4,10 @@ import { NavBar } from "@/components/ui/tubelight-navbar"
 
 export default function MainNavbar() {
   const navItems = [
-    { name: 'anasayfa', url: "#home-section", icon: Home }, 
-    { name: 'hakkımda', url: "#about-section", icon: User },
-    { name: 'projeler', url: "#projects-section", icon: Briefcase },
-    { name: 'bilgilerim', url: "#footers-section", icon: Info } 
+    { name: 'Anasayfa', url: "#home-section", icon: Home }, 
+    { name: 'Hakkımda', url: "#about-section", icon: User },
+    { name: 'Projeler', url: "#projects-section", icon: Briefcase },
+    { name: 'Bilgilerim', url: "#footers-section", icon: Info } 
   ]
 
   const scrollToSection = (sectionId: string) => {

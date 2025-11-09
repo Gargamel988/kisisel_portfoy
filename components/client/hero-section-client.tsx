@@ -40,7 +40,7 @@ const HeroSectionClient: React.FC = () => {
   const heroSectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroSectionRef);
 
-  const shouldAnimate =  isInView;
+  const shouldAnimate = isInView;
 
   // Animation variants
   const textVariants = {
@@ -100,16 +100,15 @@ const HeroSectionClient: React.FC = () => {
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
             Merhaba <br className="block md:hidden lg:block" />
-            <span className="text-2xl md:text-3xl lg:text-4xl text-green-500 font-sans">
-              Ben Ömer 
+            <span className="text-2xl md:text-3xl lg:text-4xl text-green-500 font-sans mb-4">
+              Ben Ömer
             </span>
           </h1>
 
           <p className="text-base md:text-xl text-gray-200 leading-relaxed mb-8">
-            1 yıldır modern web ve mobil uygulamalar geliştiriyorum. React,
-            Next.js, ve React Native ile kullanıcı dostu arayüzler inşa ederken;
-            Supabase ve Vercel AI SDK ile yapay zekâ destekli deneyimler
-            oluşturuyorum.
+            Modern web ve mobil uygulamalar geliştiriyorum. React, Next.js, ve
+            React Native ile kullanıcı dostu arayüzler inşa ederken; Supabase ve
+            Vercel AI SDK ile yapay zekâ destekli deneyimler oluşturuyorum.
           </p>
 
           {/* Social Media Links */}
@@ -126,19 +125,21 @@ const HeroSectionClient: React.FC = () => {
                   scale: 1.2,
                   rotate: 10,
                   boxShadow: "0px 0px 25px rgba(34,197,94,0.6)",
+                  border: "1px solid rgba(34,197,94,0.6)",
+                  backgroundColor: "rgba(34,197,94,0.6)",
                 }}
                 whileTap={{ scale: 0.95, rotate: -10 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="rounded-full"
+                className="rounded-full shadow-md shadow-green-500/30 "
               >
                 <Link
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
-                  className="flex items-center justify-center bg-white/10 hover:bg-green-500/20 p-2 md:p-4 lg:p-5 rounded-full shadow-md shadow-green-500/30 transition-colors duration-300 group"
+                  className="flex items-center justify-center bg-white/10 hover:bg-green-500/20 p-3 md:p-4 lg:p-5 rounded-full shadow-md shadow-green-500/30 transition-colors duration-300 group "
                 >
-                  <item.icon className="w-4 h-4 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-green-500 group-hover:text-white transition-colors duration-300" />
+                  <item.icon className="w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-green-500 group-hover:text-white  transition-colors duration-300" />
                 </Link>
               </motion.div>
             ))}
