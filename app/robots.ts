@@ -9,6 +9,6 @@ export default function Robots(): MetadataRoute.Robots {
         disallow: "",
       },
     ],
-    sitemap: "https://kisisel-portfoy.vercel.app/sitemap.xml",
+    sitemap: "https://hatayyazilim.com/sitemap.xml" ,
   };
 }
