@@ -3,6 +3,7 @@ import ModernPortfolioCarousel, {
 } from "./client/modern-portfolio-carousel";
 import chefoodai from "@/public/chefoodai.png";
 import moneymapai from "@/public/monaymapai.png";
+import salonheaven from "@/public/heaven.png";
 const items: PortfolioItem[] = [
   {
     id: "1",
@@ -76,6 +77,34 @@ const items: PortfolioItem[] = [
   },
   {
     id: "3",
+    title: "Salon Heaven",
+    description: "Salon Heaven, salon sahibi ve müşteri arasında bir bağlantı sağlayan bir randevu sistemi.",
+    category: "Web Development",
+    image: salonheaven,
+    technologies: ["next.js", "tailwind css", "typescript", "supabase"],
+    modalItems: [
+      {
+        title: "Salon Heaven",
+        description: "Salon Heaven, salon sahibi ve müşteri arasında bir bağlantı sağlayan bir randevu sistemi.",
+        category: "Web Development",
+        image: salonheaven,
+        technologies: ["next.js", "tailwind css", "typescript", "supabase"],
+        features: [
+          "Randevu sistemi",
+          "Salon takibi",
+          "Müşteri takibi",
+        ],
+        duration: "1 hafta",
+        role: "Frontend Developer",
+        team: "Solo Proje",
+        link: "https://heavenkuafor.com/",
+        libraries: ["React Query", "Lucide React", "shadcn ui"],
+      },
+    ],
+    status: "Aktif",
+  },
+  {
+    id: "4",
     title: "Yakında",
     description: "Bir sonraki projem çok yakında burada olacak.",
     category: "Yeni Proje",
