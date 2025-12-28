@@ -12,57 +12,58 @@ const interFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ömer Aydın | Full Stack Developer",
+  title: "Hatay yazılım ",
   description:
-    "Ömer Aydın'ın portfolio sitesi. Full Stack Developer, Mobile Developer, Web Developer.",
+    "Hatay yazılım - Profesyonel web ve mobil uygulama geliştirme hizmetleri. Modern teknolojilerle SEO optimizasyonu, responsive tasarım ve performans odaklı çözümler sunuyoruz.",
   keywords: [
-    "Ömer Aydın",
-    "Full Stack Developer",
-    "Mobile Developer",
-    "Web Developer",
-    "Portfolio",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "TypeScript",
-    "JavaScript",
-    "HTML",
-    "CSS",
+    "Hatay yazılım",
+    "web geliştirme Hatay",
+    "mobil uygulama geliştirme Hatay",
+    "SEO optimizasyonu Hatay",
+    "yazılım şirketi Hatay",
+    "web tasarım Hatay",
+    "responsive web tasarım",
+    "e-ticaret geliştirme",
+    "web uygulama geliştirme",
+    "mobil uygulama geliştirme",
+    "SEO hizmetleri",
+    "web sitesi geliştirme",
+    "yazılım çözümleri",
+    "dijital dönüşüm",
+    "modern web teknolojileri",
   ],
-  verification:{
-    google: "ZthQntL_bdSYhNe74uXr_tQKIEr4K-gQwem01txYEPs",
-  },
+
   alternates: {
-    canonical: "https://kisisel-portfoy.vercel.app/",
+    canonical: "https://hatayyazilim.com/",
   },
-  metadataBase: new URL("https://kisisel-portfoy.vercel.app/"),
-  authors: [{ name: "Ömer Aydın", url: "https://kisisel-portfoy.vercel.app/" }],
-  creator: "Ömer Aydın",
-  publisher: "Ömer Aydın",
+  metadataBase: new URL("https://hatayyazilim.com/"),
+  authors: [{ name: "Hatay yazılım", url: "https://hatayyazilim.com/" }],
+  creator: "Hatay yazılım",
+  publisher: "Hatay yazılım",
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    title: "Ömer Aydın | Full Stack Developer",
+    title: "Hatay yazılım - Profesyonel web ve mobil uygulama geliştirme hizmetleri",
     description:
-      "Ömer Aydın'ın portfolio sitesi. Full Stack Developer, Mobile Developer, Web Developer.",
-    siteName: "Ömer Aydın",
+      "Hatay yazılım - Profesyonel web ve mobil uygulama geliştirme hizmetleri. Modern teknolojilerle SEO optimizasyonu, responsive tasarım ve performans odaklı çözümler sunuyoruz.",
+    siteName: "Hatay yazılım",
     images: [
       {
         url: "/profil.png",
         width: 1200,
         height: 630,
-        alt: "Ömer Aydın | Full Stack Developer",
+        alt: "Hatay yazılım - Profesyonel web ve mobil uygulama geliştirme hizmetleri",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ömer Aydın | Full Stack Developer",
+    title: "Hatay yazılım - Profesyonel web ve mobil uygulama geliştirme hizmetleri",
     description:
-      "Ömer Aydın'ın portfolio sitesi. Full Stack Developer, Mobile Developer, Web Developer.",
+      "Hatay yazılım - Profesyonel web ve mobil uygulama geliştirme hizmetleri. Modern teknolojilerle SEO optimizasyonu, responsive tasarım ve performans odaklı çözümler sunuyoruz.",
     images: ["/profil.png"],
-    creator: "@omerAIdev",
+    creator: "@hatayyazilim",
   },
   robots: {
     index: true,
@@ -85,10 +86,10 @@ export default function RootLayout({
   const jsonLdApp = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Ömer Aydın",
+    name: "Hatay yazılım",
     description:
-      "Ömer Aydın'ın portfolio sitesi. Full Stack Developer, Mobile Developer, Web Developer.",
-    url: "https://kisisel-portfoy.vercel.app/",
+      "Hatay yazılım - Profesyonel web ve mobil uygulama geliştirme hizmetleri. Modern teknolojilerle SEO optimizasyonu, responsive tasarım ve performans odaklı çözümler sunuyoruz.",
+    url: "https://hatayyazilim.com/",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "Web",
     offers: {
@@ -98,7 +99,7 @@ export default function RootLayout({
     },
     creator: {
       "@type": "Person",
-      name: "Ömer Aydın",
+      name: "Hatay yazılım",
     },
     inLanguage: "tr-TR",
   };
@@ -106,10 +107,10 @@ export default function RootLayout({
   const jsonLdOrg = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Ömer Aydın",
-    url: "https://kisisel-portfoy.vercel.app/",
-    logo: "https://kisisel-portfoy.vercel.app/profil.png",
-    sameAs: ["https://x.com/omerAIdev"],
+    name: "Hatay yazılım",
+    url: "https://hatayyazilim.com/",
+    logo: "https://hatayyazilim.com/profil.png",
+    sameAs: ["https://x.com/hatayyazilim"],
   };
   return (
     <html lang="tr" className="dark" >
