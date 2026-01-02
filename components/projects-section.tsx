@@ -11,7 +11,7 @@ const items: PortfolioItem[] = [
     description: "CheFoodAI, yemek tariflerini oluşturan bir AI uygulamasıdır.",
     category: "Web Development",
     image: chefoodai,
-    technologies: ["next.js", "tailwind css", "typescript"],
+    technologies: ["Next.js", "TailwindCSS", "TypeScript"],
     modalItems: [
       {
         title: "CheFoodAI",
@@ -19,7 +19,7 @@ const items: PortfolioItem[] = [
           "CheFoodAI, yemek tariflerini oluşturan bir AI uygulamasıdır.",
         category: "Web Development",
         image: chefoodai,
-        technologies: ["next.js", "tailwind css", "typescript"],
+        technologies: ["Next.js", "TailwindCSS", "TypeScript"],
         libraries: [
           "Vercel AI SDK",
           "Shadcn UI",
@@ -47,7 +47,7 @@ const items: PortfolioItem[] = [
       "MoneyMapAi, para yönetimi için bir uygulama. ",
     category: "Mobile Development",
     image: moneymapai,
-    technologies: ["react native", "expo", "typescript"],
+    technologies: ["React Native", "Expo", "TypeScript"],
     modalItems: [
       {
         title: "MoneyMapAi",
@@ -56,10 +56,12 @@ const items: PortfolioItem[] = [
         category: "Mobile Development",
         image: moneymapai,
         technologies: [
-          "react native",
-          "typescript",
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "Supabase",
         ],
-        libraries: ["React Native", "Vercel AI SDK", "Expo"],
+        libraries: ["React Native", "Vercel AI SDK", "Expo", "Supabase"],
         features: [
           "Para yönetimi",
           "Hesap takibi",
@@ -70,10 +72,10 @@ const items: PortfolioItem[] = [
         duration: "1 ay 2 hafta",
         role: "Mobile Developer",
         team: "Solo Proje",
-        link: "",
+        link: "https://play.google.com/store/apps/details?id=com.omeraydin.moneymapai",
       },
     ],
-    status: "yayınlanma aşamasında",
+    status: "Aktif",
   },
   {
     id: "3",
@@ -81,14 +83,14 @@ const items: PortfolioItem[] = [
     description: "Salon Heaven, salon sahibi ve müşteri arasında bir bağlantı sağlayan bir randevu sistemi.",
     category: "Web Development",
     image: salonheaven,
-    technologies: ["next.js", "tailwind css", "typescript", "supabase"],
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
     modalItems: [
       {
         title: "Salon Heaven",
         description: "Salon Heaven, salon sahibi ve müşteri arasında bir bağlantı sağlayan bir randevu sistemi.",
         category: "Web Development",
         image: salonheaven,
-        technologies: ["next.js", "tailwind css", "typescript", "supabase"],
+        technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
         features: [
           "Randevu sistemi",
           "Salon takibi",
@@ -98,7 +100,7 @@ const items: PortfolioItem[] = [
         role: "Frontend Developer",
         team: "Solo Proje",
         link: "https://heavenkuafor.com/",
-        libraries: ["React Query", "Lucide React", "shadcn ui"],
+        libraries: ["React Query", "Lucide React", "ShadcnUI"],
       },
     ],
     status: "Aktif",
